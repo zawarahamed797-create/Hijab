@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hijab ul Emaan — Premium Islamic Wear | Mirpur</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --green:#1B4332;--gold:#C9A84C;--gold2:#E8C97A;--ivory:#FDFAF4;--sage:#52796F;
+  --cream:#F5EFE0;--charcoal:#1A1A2E;
+  --bg:#0D1F17;--bg2:#122A1E;--bg3:#1A3828;--surface:#1E3A2A;--surface2:#254D38;
+  --text:#FDFAF4;--text2:#C8D8C0;--text3:#7A9A85;
+  --border:rgba(201,168,76,0.2);--shadow:rgba(0,0,0,0.5);--glow:rgba(201,168,76,0.12);
+}
+[data-theme="light"]{
+  --bg:#FDFAF4;--bg2:#F5EFE0;--bg3:#EDE4CC;--surface:#FFFFFF;--surface2:#F5EFE0;
+  --text:#1A1A2E;--text2:#2D4A35;--text3:#52796F;--border:rgba(27,67,50,0.15);--shadow:rgba(27,67,50,0.1);--glow:rgba(201,168,76,0.1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);transition:background .4s,color .4s;overflow-x:hidden;}
+.urdu{font-family:'Noto Nastaliq Urdu',serif;direction:rtl;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
+
+/* NAVBAR */
+#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;background:transparent;backdrop-filter:blur(0px);border-bottom:1px solid transparent;transition:all .4s;height:70px;display:flex;align-items:center;}
+#navbar.scrolled{background:rgba(13,31,23,0.95);backdrop-filter:blur(20px);border-bottom-color:var(--border);}
+[data-theme="light"] #navbar.scrolled{background:rgba(253,250,244,0.95);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1400px;margin:0 auto;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo .logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--green),var(--gold));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 15px rgba(201,168,76,0.3);}
+.nav-logo .logo-text{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--gold);line-height:1.1;}
+.nav-logo .logo-sub{font-size:0.6rem;color:var(--text3);letter-spacing:2px;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:0.1rem;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:0.82rem;font-weight:500;padding:6px 11px;border-radius:6px;transition:all .3s;white-space:nowrap;}
+.nav-links a:hover{color:var(--gold);background:var(--glow);}
+.nav-right{display:flex;align-items:center;gap:10px;}
+#themeToggle{background:rgba(201,168,76,0.1);border:1px solid var(--border);color:var(--gold);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:16px;transition:all .3s;display:flex;align-items:center;justify-content:center;}
+#themeToggle:hover{background:var(--gold);color:#fff;transform:rotate(20deg);}
+.hamburger{display:none;background:none;border:none;color:var(--gold);font-size:22px;cursor:pointer;padding:5px;}
+.mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);padding:1rem;z-index:999;}
+.mobile-menu a{display:block;color:var(--text2);text-decoration:none;padding:10px 15px;border-radius:8px;font-size:0.9rem;transition:all .3s;}
+.mobile-menu a:hover{color:var(--gold);background:var(--glow);}
+.mobile-menu.open{display:block;animation:slideDown .3s ease;}
+@keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+
+/* HERO */
+#home{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 30% 40%,rgba(27,67,50,0.9),transparent 60%),radial-gradient(ellipse at 70% 60%,rgba(82,121,111,0.3),transparent 50%),linear-gradient(160deg,#0D1F17,#122A1E 50%,#0A1510);}
+[data-theme="light"] #home{background:radial-gradient(ellipse at 30% 40%,rgba(27,67,50,0.15),transparent 60%),linear-gradient(160deg,#F5EFE0,#EDE4CC);}
+.particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.particle{position:absolute;width:4px;height:4px;background:var(--gold);border-radius:50%;opacity:0;animation:float var(--dur,6s) var(--delay,0s) infinite ease-in-out;}
+@keyframes float{0%,100%{opacity:0;transform:translateY(100vh) scale(0)}50%{opacity:0.6}60%{opacity:0.4;transform:translateY(-20px) scale(1)}99%{opacity:0;transform:translateY(-100px) scale(0)}}
+.hero-content{text-align:center;position:relative;z-index:2;padding:0 2rem;max-width:950px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:var(--gold2);font-size:0.78rem;letter-spacing:2px;padding:8px 22px;border-radius:100px;margin-bottom:1.5rem;animation:fadeUp .8s .2s both;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5.5vw,4.5rem);font-weight:700;line-height:1.15;margin-bottom:1rem;animation:fadeUp .8s .4s both;color:var(--text);}
+.hero-title span{background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-urdu{font-family:'Noto Nastaliq Urdu',serif;direction:rtl;font-size:clamp(1rem,2.5vw,1.4rem);color:var(--gold);margin-bottom:2.5rem;animation:fadeUp .8s .6s both;line-height:2.2;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s .8s both;}
+.btn-primary{background:linear-gradient(135deg,var(--green),var(--sage));color:var(--ivory);font-weight:600;padding:14px 32px;border-radius:50px;text-decoration:none;font-size:0.9rem;transition:all .3s;border:none;cursor:pointer;box-shadow:0 6px 30px rgba(27,67,50,0.5);display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(27,67,50,0.7);}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--charcoal);font-weight:700;padding:14px 32px;border-radius:50px;text-decoration:none;font-size:0.9rem;transition:all .3s;border:none;cursor:pointer;box-shadow:0 6px 30px rgba(201,168,76,0.4);display:inline-flex;align-items:center;gap:8px;}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(201,168,76,0.6);}
+.btn-outline{background:transparent;color:var(--gold);font-weight:600;padding:13px 30px;border-radius:50px;text-decoration:none;font-size:0.9rem;transition:all .3s;border:2px solid var(--gold);cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+.btn-outline:hover{background:var(--gold);color:var(--charcoal);transform:translateY(-3px);}
+.hero-floating{position:absolute;inset:0;pointer-events:none;}
+.float-icon{position:absolute;font-size:2rem;opacity:0.15;animation:floatIcon var(--dur,5s) var(--delay,0s) infinite ease-in-out;}
+@keyframes floatIcon{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-20px) rotate(10deg)}}
+.hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);animation:bounceArr 2s infinite;color:var(--gold);font-size:20px;opacity:0.5;}
+@keyframes bounceArr{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTIONS */
+section{padding:100px 2rem;}
+.section-container{max-width:1200px;margin:0 auto;}
+.section-label{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;font-weight:600;margin-bottom:1rem;}
+.section-label::before,.section-label::after{content:'';width:25px;height:1px;background:var(--gold);opacity:0.5;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:var(--text);margin-bottom:0.8rem;}
+.section-title span{background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.section-sub{color:var(--text3);font-size:0.92rem;max-width:600px;line-height:1.8;margin-bottom:3rem;}
+
+/* ABOUT */
+#about{background:var(--bg2);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.about-text p{color:var(--text2);line-height:1.9;font-size:0.92rem;margin-bottom:1rem;}
+.about-urdu{font-family:'Noto Nastaliq Urdu',serif;direction:rtl;color:var(--gold);font-size:1rem;line-height:2.2;margin-bottom:1.5rem;}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.2rem;text-align:center;transition:all .3s;}
+.stat-card:hover{border-color:var(--gold);box-shadow:0 8px 25px var(--glow);}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--gold);line-height:1;}
+.stat-label{font-size:0.75rem;color:var(--text3);margin-top:4px;letter-spacing:1px;text-transform:uppercase;}
+.info-cards{display:grid;gap:0.8rem;}
+.info-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.2rem;display:flex;gap:1rem;align-items:flex-start;transition:all .3s;}
+.info-card:hover{border-color:var(--gold);transform:translateX(4px);}
+.info-icon{font-size:1.3rem;flex-shrink:0;}
+.info-title{font-weight:600;color:var(--text);font-size:0.9rem;margin-bottom:2px;}
+.info-desc{font-size:0.8rem;color:var(--text3);}
+
+/* COLLECTIONS */
+#collections{background:var(--bg);}
+.tab-btns{display:flex;gap:0.5rem;margin-bottom:2.5rem;flex-wrap:wrap;}
+.tab-btn{background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:10px 26px;border-radius:50px;cursor:pointer;font-size:0.88rem;font-weight:500;transition:all .3s;}
+.tab-btn.active{background:linear-gradient(135deg,var(--green),var(--sage));color:var(--ivory);border-color:transparent;box-shadow:0 6px 20px rgba(27,67,50,0.4);}
+.tab-btn:hover:not(.active){border-color:var(--gold);color:var(--gold);}
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+.collection-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem;}
+.coll-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;transition:all .4s;cursor:pointer;position:relative;overflow:hidden;}
+.coll-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.05),transparent);opacity:0;transition:opacity .4s;}
+.coll-card:hover{transform:translateY(-6px);border-color:rgba(201,168,76,0.5);box-shadow:0 15px 40px var(--glow);}
+.coll-card:hover::before{opacity:1;}
+.coll-icon{font-size:2rem;margin-bottom:0.8rem;}
+.coll-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;}
+.coll-desc{font-size:0.78rem;color:var(--text3);line-height:1.6;}
+.coll-wa-btn{margin-top:0.8rem;display:inline-flex;align-items:center;gap:5px;font-size:0.75rem;color:var(--gold);text-decoration:none;font-weight:600;transition:color .3s;}
+.coll-wa-btn:hover{color:var(--gold2);}
+
+/* GALLERY */
+#gallery{background:var(--bg2);}
+.filter-btns{display:flex;gap:0.5rem;margin-bottom:2rem;flex-wrap:wrap;}
+.filter-btn{background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:8px 20px;border-radius:50px;cursor:pointer;font-size:0.8rem;font-weight:500;transition:all .3s;}
+.filter-btn.active,.filter-btn:hover{background:var(--gold);color:var(--charcoal);border-color:transparent;}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;}
+.gallery-item{border-radius:12px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:3/4;transition:all .4s;}
+.gallery-item:hover{transform:scale(1.03);box-shadow:0 15px 40px var(--shadow);}
+.gallery-item .g-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;}
+.gallery-item .g-overlay{position:absolute;inset:0;background:rgba(27,67,50,0.8);opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center;gap:1rem;}
+.gallery-item:hover .g-overlay{opacity:1;}
+.g-overlay span{font-size:1.5rem;cursor:pointer;transition:transform .3s;}
+.g-overlay span:hover{transform:scale(1.2);}
+.gallery-item.g1{background:linear-gradient(135deg,#1B4332,#2D6A4F);}
+.gallery-item.g2{background:linear-gradient(135deg,#2D6A4F,#C9A84C);}
+.gallery-item.g3{background:linear-gradient(135deg,#1B4332,#52796F);}
+.gallery-item.g4{background:linear-gradient(135deg,#52796F,#C9A84C);}
+.gallery-item.g5{background:linear-gradient(135deg,#1B4332,#081C15);}
+.gallery-item.g6{background:linear-gradient(135deg,#C9A84C,#E8C97A);}
+.gallery-item.g7{background:linear-gradient(135deg,#2D6A4F,#1B4332);}
+.gallery-item.g8{background:linear-gradient(135deg,#52796F,#1B4332);}
+/* LIGHTBOX */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:9999;display:none;align-items:center;justify-content:center;padding:2rem;}
+#lightbox.open{display:flex;}
+.lb-content{background:var(--surface);border-radius:16px;overflow:hidden;max-width:500px;width:100%;aspect-ratio:3/4;position:relative;display:flex;align-items:center;justify-content:center;font-size:5rem;}
+.lb-close{position:absolute;top:1rem;right:1rem;background:var(--gold);color:var(--charcoal);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;}
+
+/* WHY CHOOSE */
+#why{background:var(--bg);}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;}
+.why-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;transition:all .4s;}
+.why-card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 15px 40px var(--glow);}
+.why-icon{font-size:2.5rem;margin-bottom:1rem;}
+.why-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold);margin-bottom:0.5rem;}
+.why-desc{font-size:0.82rem;color:var(--text3);line-height:1.7;}
+
+/* REVIEWS */
+#reviews{background:var(--bg2);}
+.rating-summary{display:flex;gap:3rem;align-items:center;margin-bottom:3rem;flex-wrap:wrap;}
+.rating-big{text-align:center;}
+.rating-big .num{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:700;color:var(--gold);line-height:1;}
+.rating-big .stars{color:var(--gold);font-size:1.2rem;margin:.3rem 0;}
+.rating-big .count{font-size:0.8rem;color:var(--text3);}
+.rating-bars{flex:1;min-width:200px;}
+.bar-row{display:flex;align-items:center;gap:0.8rem;margin-bottom:0.5rem;font-size:0.8rem;color:var(--text3);}
+.bar-track{flex:1;height:6px;background:var(--surface2);border-radius:3px;overflow:hidden;}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:3px;transition:width 1s ease;}
+.carousel-wrapper{overflow:hidden;position:relative;}
+.carousel{display:flex;gap:1.2rem;transition:transform .5s ease;}
+.review-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;min-width:280px;flex-shrink:0;transition:all .3s;}
+.review-card:hover{border-color:var(--gold);box-shadow:0 10px 30px var(--glow);}
+.rv-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.8rem;}
+.rv-name{font-weight:600;color:var(--text);font-size:0.92rem;}
+.rv-date{font-size:0.72rem;color:var(--text3);}
+.rv-stars{color:var(--gold);font-size:0.85rem;margin-bottom:0.6rem;}
+.rv-text{font-size:0.82rem;color:var(--text2);line-height:1.7;font-style:italic;}
+.carousel-controls{display:flex;gap:0.8rem;margin-top:1.5rem;justify-content:center;}
+.car-btn{background:var(--surface);border:1px solid var(--border);color:var(--gold);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:14px;transition:all .3s;display:flex;align-items:center;justify-content:center;}
+.car-btn:hover{background:var(--gold);color:var(--charcoal);}
+.review-actions{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;}
+
+/* ORDER */
+#order{background:var(--bg);}
+.order-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.order-form-panel{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;}
+.order-info{display:grid;gap:1rem;}
+.form-group{margin-bottom:1.2rem;}
+.form-group label{display:block;font-size:0.75rem;font-weight:600;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:0.88rem;transition:border-color .3s;outline:none;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--glow);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.field-error{font-size:0.72rem;color:#e05555;margin-top:4px;display:none;}
+.oi-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;transition:all .3s;}
+.oi-card:hover{border-color:var(--gold);box-shadow:0 8px 25px var(--glow);}
+.oi-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold);margin-bottom:0.5rem;}
+.oi-desc{font-size:0.82rem;color:var(--text3);line-height:1.7;}
+/* Modal */
+#successModal{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:9999;display:none;align-items:center;justify-content:center;padding:2rem;}
+#successModal.open{display:flex;}
+.modal-box{background:var(--surface);border:1px solid var(--gold);border-radius:20px;padding:2.5rem;max-width:480px;width:100%;text-align:center;animation:popIn .4s ease;}
+@keyframes popIn{from{opacity:0;transform:scale(0.8)}to{opacity:1;transform:scale(1)}}
+.modal-icon{font-size:3rem;margin-bottom:1rem;}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--gold);margin-bottom:0.5rem;}
+.modal-body{font-size:0.85rem;color:var(--text2);line-height:1.8;margin-bottom:1.5rem;}
+.modal-summary{background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1.5rem;text-align:left;font-size:0.82rem;color:var(--text2);line-height:1.9;}
+
+/* GIFT SHOP */
+#gift{background:var(--bg2);}
+.gift-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem;}
+.gift-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.8rem;text-align:center;transition:all .4s;}
+.gift-card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 15px 40px var(--glow);}
+.gift-icon{font-size:2.5rem;margin-bottom:0.8rem;}
+.gift-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--gold);margin-bottom:0.4rem;}
+.gift-desc{font-size:0.8rem;color:var(--text3);line-height:1.6;}
+
+/* CONTACT */
+#contact{background:var(--bg);}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+.contact-cards{display:grid;gap:1rem;}
+.contact-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;transition:all .3s;}
+.contact-card:hover{border-color:var(--gold);box-shadow:0 10px 30px var(--glow);}
+.contact-label{font-size:0.7rem;color:var(--text3);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.4rem;}
+.contact-val{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold);margin-bottom:0.8rem;}
+.contact-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.btn-call{background:linear-gradient(135deg,var(--green),var(--sage));color:var(--ivory);padding:9px 18px;border-radius:8px;text-decoration:none;font-size:0.8rem;font-weight:600;display:flex;align-items:center;gap:6px;transition:all .3s;}
+.btn-call:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(27,67,50,0.5);}
+.btn-wa{background:linear-gradient(135deg,#128C7E,#25D366);color:#fff;padding:9px 18px;border-radius:8px;text-decoration:none;font-size:0.8rem;font-weight:600;display:flex;align-items:center;gap:6px;transition:all .3s;}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,0.4);}
+.btn-fb{background:linear-gradient(135deg,#1877F2,#4293f5);color:#fff;padding:9px 18px;border-radius:8px;text-decoration:none;font-size:0.8rem;font-weight:600;display:flex;align-items:center;gap:6px;transition:all .3s;}
+.btn-fb:hover{transform:translateY(-2px);}
+.btn-maps{background:linear-gradient(135deg,#E64A19,#FF7043);color:#fff;padding:9px 18px;border-radius:8px;text-decoration:none;font-size:0.8rem;font-weight:600;display:flex;align-items:center;gap:6px;transition:all .3s;}
+.btn-maps:hover{transform:translateY(-2px);}
+.contact-form-panel{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;}
+.contact-form-panel h3{font-family:'Cormorant Garamond',serif;color:var(--gold);margin-bottom:1.5rem;font-size:1.3rem;}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2rem 2rem;}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--gold);}
+.footer-tagline{color:var(--text3);font-size:0.82rem;margin-top:0.5rem;line-height:1.7;max-width:260px;}
+.footer-tagline .urdu{color:var(--gold);font-size:0.9rem;margin-top:0.5rem;}
+.footer-social{display:flex;gap:10px;margin-top:1.2rem;}
+.soc-icon{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text3);text-decoration:none;font-size:14px;transition:all .3s;}
+.soc-icon:hover{background:var(--gold);color:var(--charcoal);border-color:transparent;transform:translateY(-2px);}
+.footer-links h4{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.footer-links a{display:block;color:var(--text3);text-decoration:none;font-size:0.82rem;margin-bottom:0.5rem;transition:color .3s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-bottom{max-width:1200px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-bottom p{color:var(--text3);font-size:0.78rem;}
+
+/* TOAST */
+#toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(20px);z-index:9999;background:linear-gradient(135deg,var(--green),var(--sage));color:var(--ivory);padding:14px 28px;border-radius:12px;font-size:0.88rem;font-weight:500;opacity:0;transition:all .4s;pointer-events:none;box-shadow:0 10px 40px rgba(0,0,0,0.4);white-space:nowrap;}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* BACK TO TOP */
+#backTop{position:fixed;bottom:30px;right:30px;z-index:999;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--charcoal);width:46px;height:46px;border-radius:50%;border:none;cursor:pointer;font-size:18px;display:none;align-items:center;justify-content:center;box-shadow:0 6px 25px rgba(201,168,76,0.4);transition:all .3s;}
+#backTop:hover{transform:translateY(-3px);box-shadow:0 10px 35px rgba(201,168,76,0.6);}
+#backTop.visible{display:flex;}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-l{opacity:0;transform:translateX(-30px);transition:opacity .7s ease,transform .7s ease;}
+.reveal-l.visible{opacity:1;transform:translateX(0);}
+.reveal-r{opacity:0;transform:translateX(30px);transition:opacity .7s ease,transform .7s ease;}
+.reveal-r.visible{opacity:1;transform:translateX(0);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr;}
+  .order-layout{grid-template-columns:1fr;}
+  .contact-layout{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  section{padding:70px 1.2rem;}
+  .hero-btns{flex-direction:column;align-items:center;}
+  .footer-inner{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .rating-summary{flex-direction:column;gap:1.5rem;}
+  .review-actions{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<div id="toast"></div>
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+<div id="lightbox" onclick="closeLightbox()"><div class="lb-content" id="lbContent"><button class="lb-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button></div></div>
+<div id="successModal"><div class="modal-box"><div class="modal-icon">✅</div><h2 class="modal-title">Order Placed!</h2><div class="modal-body">Your inquiry has been saved. We'll contact you shortly on WhatsApp!</div><div class="modal-summary" id="modalSummary"></div><a id="modalWA" href="#" target="_blank" class="btn-gold" style="justify-content:center;width:100%;margin-bottom:0.8rem;"><i class="fab fa-whatsapp"></i> Send via WhatsApp</a><button class="btn-outline" onclick="closeModal()" style="width:100%;justify-content:center;">Close</button></div></div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <div class="logo-icon">☪️</div>
+      <div>
+        <div class="logo-text">Hijab ul Emaan</div>
+        <div class="logo-sub">Mirpur — Premium Islamic Wear</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#collections">Collections</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#order">Order</a>
+      <a href="#gift">Gift Shop</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button id="themeToggle"><i class="fas fa-moon"></i></button>
+      <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMenu()">🏠 Home</a>
+  <a href="#about" onclick="closeMenu()">ℹ️ About</a>
+  <a href="#collections" onclick="closeMenu()">👗 Collections</a>
+  <a href="#gallery" onclick="closeMenu()">🖼️ Gallery</a>
+  <a href="#reviews" onclick="closeMenu()">⭐ Reviews</a>
+  <a href="#order" onclick="closeMenu()">🛒 Order</a>
+  <a href="#gift" onclick="closeMenu()">🎁 Gift Shop</a>
+  <a href="#contact" onclick="closeMenu()">📞 Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="particles" id="particles"></div>
+  <div class="hero-floating">
+    <span class="float-icon" style="top:15%;left:8%;--dur:6s;--delay:0s">☪️</span>
+    <span class="float-icon" style="top:25%;right:10%;--dur:7s;--delay:1s">🌙</span>
+    <span class="float-icon" style="bottom:20%;left:12%;--dur:5s;--delay:2s">✨</span>
+    <span class="float-icon" style="bottom:30%;right:8%;--dur:8s;--delay:0.5s">🌿</span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fas fa-star"></i> 4.8 ⭐ — 910 Google Reviews</div>
+    <h1 class="hero-title">The Premier Destination for<br><span>High-Quality Abayas</span><br>& Men's Jubbas</h1>
+    <div class="hero-urdu">اعلیٰ معیار کی عبائیں اور مردانہ جبے — مرپور</div>
+    <div class="hero-btns">
+      <a href="#collections" class="btn-primary"><i class="fas fa-th-large"></i> Explore Collection</a>
+      <a href="https://wa.me/923165980659?text=Assalamu%20Alaikum!%20I%20want%20to%20inquire%20about%20your%20collection." target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-container">
+    <div class="about-grid">
+      <div class="about-text reveal-l">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">Premium Islamic <span>Boutique</span></h2>
+        <div class="about-urdu">حجاب الایمان — مرپور کی سب سے قابل اعتماد اسلامی بوتیک</div>
+        <p>Hijab ul Emaan is Mirpur's premier destination for high-quality Islamic clothing. Located at Kalyal Hotel, Sector C-1, we offer an exquisite range of abayas, hijabs, niqabs, and men's jubbas — crafted with the finest fabrics and attention to detail.</p>
+        <p>With over 910 satisfied customers and a 4.8 Google rating, we take pride in serving the Muslim community with dignity, elegance, and Islamic values. Whether you're looking for everyday modest wear or a special gift, we have something beautiful for every occasion.</p>
+        <div class="stats-grid" style="margin-top:2rem;">
+          <div class="stat-card"><div class="stat-num" data-target="910">0</div><div class="stat-label">Google Reviews</div></div>
+          <div class="stat-card"><div class="stat-num" data-target="4.8" data-decimal="true">0</div><div class="stat-label">Star Rating</div></div>
+          <div class="stat-card"><div class="stat-num" data-target="50">0</div><div class="stat-label">Products+</div></div>
+          <div class="stat-card"><div class="stat-num" data-target="100">0</div><div class="stat-label">% Halal Quality</div></div>
+        </div>
+      </div>
+      <div class="info-cards reveal-r">
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div>
+            <div class="info-title">Our Location</div>
+            <div class="info-desc">Kalyal Hotel, Sector C-1, Chowk Shaheedan, Muhammad Road, New Mirpur City, 10250</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🕙</div>
+          <div>
+            <div class="info-title">Opening Hours</div>
+            <div class="info-desc">Open Daily — Closes 10 PM<br>Customers typically spend 10–45 mins</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">⭐</div>
+          <div>
+            <div class="info-title">Customer Ratings</div>
+            <div class="info-desc">Google: 4.8 / 5 (910 reviews)<br>Facebook: 4.2 / 5</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div>
+            <div class="info-title">Contact</div>
+            <div class="info-desc">0316 5980659 — Call or WhatsApp anytime</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:0.5rem;">
+          <a href="tel:03165980659" class="btn-call"><i class="fas fa-phone"></i> Call Now</a>
+          <a href="https://wa.me/923165980659" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="https://www.facebook.com/HijabulEmaanMirpur" target="_blank" class="btn-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<section id="collections">
+  <div class="section-container">
+    <div class="section-label reveal">Our Collections</div>
+    <h2 class="section-title reveal">Modest <span>Fashion</span> for All</h2>
+    <p class="section-sub reveal">Handpicked fabrics, elegant designs, Islamic values — for women and men.</p>
+    <div class="tab-btns reveal">
+      <button class="tab-btn active" onclick="switchTab('women',this)">👗 Women's Collection</button>
+      <button class="tab-btn" onclick="switchTab('men',this)">👘 Men's Collection</button>
+    </div>
+    <div id="tab-women" class="tab-content active">
+      <div class="collection-grid">
+        <div class="coll-card reveal"><div class="coll-icon">🧕</div><div class="coll-name">Premium Abayas</div><div class="coll-desc">Plain & Embroidered — finest quality fabric</div><a href="https://wa.me/923165980659?text=I'm interested in Premium Abayas" target="_blank" class="coll-wa-btn"><i class="fab fa-whatsapp"></i> Inquire</a></div>
+        <div class="coll-card reveal"><div class="coll-icon">🌸</div><div class="coll-name">Hijabs</div><div class="coll-desc">Chiffon, Silk, Jersey — all styles & colors</div><a href="https://wa.me/923165980659?text=I'm interested in Hijabs" target="_blank" class="coll-wa-btn"><i class="fab fa-whatsapp"></i> Inquire</a></div>
+        <div class="coll-card reveal"><div class="coll-icon">✨</div><div class="coll-name">Niqabs</div><div class="coll-desc">Full Face & Half Face — modest designs</div><a href="https://wa.me/923165980659?text=I'm interested in Niqabs" target="_blank" class="coll-wa-btn"><i class="fab fa-whatsapp"></i> Inquire</a></div>
+        <div class="coll-card reveal"><div class="coll-icon">💎</div><div class="coll-name">Embroidered Abayas</div><div class="coll-desc">Special hand-crafted embroidery designs</div><a href="https://wa.me/923165980659?text=I'm interested in Embroidered Abayas" target="_blank" class="coll-wa-btn"><i class="fab fa-whatsapp"></i> Inquire</a></div>
+        <div class="coll-card reveal"><div class="coll-icon">🎁</div><div class="coll-name">Gifting Abayas</div><div class="coll-desc">Beautiful gift-wrapped abaya sets</div><a href="https://wa.me/923165980659?text=I'm interested in Gifting Abayas" target="_blank" class="coll-wa-btn"><i class="fab fa-whatsapp"></i> Inquire</a></div>
+        <div class="coll-card reveal"><div class="coll-icon">👘</div><div class="coll-name">Prayer Dresses</div><div class="coll-desc">Jalabiyas & prayer sets — soft & comfortable</div><a href="https://wa.me/923165980659?text=I'm interested in Prayer Dresses" target="_blank" class="coll-wa-btn"><i class="fab fa-whatsapp"></i> Inquire</a></div>
+        <div class="coll-card reveal"><div class="coll-icon">🛍️</div><div class="coll-name">Abaya Gift Sets</div><div class="coll-desc">Premium packaging — perfect for gifting</div><a href="https://wa.me/923165980659?text=I'm interested in Abaya Gift Sets" target="_blank" class="coll-wa-btn"><i class="fab fa-whatsapp"></i> Inquire</a></div>
+        <div class="coll-card reveal"><div class="coll-icon">🌺</div><div class="coll-name">Luxury Abayas</div><div class="coll-desc">Premium fabrics — elegance redefined</div><a href="https://wa.me/923165980659?text=I'm interested in Luxury Abayas" target="_blank" class="coll-wa-btn"><i class="fab fa-whatsapp"></i> Inquire</a></div>
+      </div>
+    </div>
+    <div id="tab-men" class="tab-content">
+      <div class="collection-grid">
+        <div class="coll-card reveal"><div class="coll-icon">👘</div><div class="coll-name">Men's Jubbas</div><div class="coll-desc">Short & Long — classic Islamic style</div><a href="https://wa.me/923165980659?text=I'm interested in Men's Jubbas" target="_blank" class="coll-wa-btn"><i class="fab fa-whatsapp"></i> Inquire</a></div>
+        <div class="coll-card reveal"><div class="coll-icon">🕌</div><div class="coll-name">Kurta Sets</div><div class="coll-desc">Traditional style — comfortable & stylish</div><a href="https://wa.me/923165980659?text=I'm interested in Kurta Sets" target="_blank" class="coll-wa-btn"><i class="fab fa-whatsapp"></i> Inquire</a></div>
+        <div class="coll-card reveal"><div class="coll-icon">🎁</div><div class="coll-name">Jubba Gift Sets</div><div class="coll-desc">Special packaging — ideal for Eid gifts</div><a href="https://wa.me/923165980659?text=I'm interested in Jubba Gift Sets" target="_blank" class="coll-wa-btn"><i class="fab fa-whatsapp"></i> Inquire</a></div>
+        <div class="coll-card reveal"><div class="coll-icon">🌟</div><div class="coll-name">Embroidered Jubbas</div><div class="coll-desc">Premium embroidery — stand out gracefully</div><a href="https://wa.me/923165980659?text=I'm interested in Embroidered Jubbas" target="_blank" class="coll-wa-btn"><i class="fab fa-whatsapp"></i> Inquire</a></div>
+        <div class="coll-card reveal"><div class="coll-icon">🧢</div><div class="coll-name">Islamic Caps (Topi)</div><div class="coll-desc">Various styles — complete your Islamic look</div><a href="https://wa.me/923165980659?text=I'm interested in Islamic Caps" target="_blank" class="coll-wa-btn"><i class="fab fa-whatsapp"></i> Inquire</a></div>
+        <div class="coll-card reveal"><div class="coll-icon">🌿</div><div class="coll-name">Linen Jubbas</div><div class="coll-desc">Breathable summer collection — lightweight</div><a href="https://wa.me/923165980659?text=I'm interested in Linen Jubbas" target="_blank" class="coll-wa-btn"><i class="fab fa-whatsapp"></i> Inquire</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-container">
+    <div class="section-label reveal">Showcase</div>
+    <h2 class="section-title reveal">Our <span>Gallery</span></h2>
+    <p class="section-sub reveal">A glimpse of our beautiful collection — elegant, modest, premium.</p>
+    <div class="filter-btns reveal">
+      <button class="filter-btn active" onclick="filterGallery('all',this)">All</button>
+      <button class="filter-btn" onclick="filterGallery('abaya',this)">Abayas</button>
+      <button class="filter-btn" onclick="filterGallery('jubba',this)">Jubbas</button>
+      <button class="filter-btn" onclick="filterGallery('hijab',this)">Hijabs</button>
+      <button class="filter-btn" onclick="filterGallery('gift',this)">Gift Sets</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item g1 reveal" data-cat="abaya" onclick="openLightbox('🧕','Premium Abaya')"><div class="g-bg">🧕</div><div class="g-overlay"><span>❤️</span><span>🔍</span></div></div>
+      <div class="gallery-item g2 reveal" data-cat="hijab" onclick="openLightbox('🌸','Silk Hijab')"><div class="g-bg">🌸</div><div class="g-overlay"><span>❤️</span><span>🔍</span></div></div>
+      <div class="gallery-item g3 reveal" data-cat="jubba" onclick="openLightbox('👘','Men\'s Jubba')"><div class="g-bg">👘</div><div class="g-overlay"><span>❤️</span><span>🔍</span></div></div>
+      <div class="gallery-item g4 reveal" data-cat="gift" onclick="openLightbox('🎁','Gift Set')"><div class="g-bg">🎁</div><div class="g-overlay"><span>❤️</span><span>🔍</span></div></div>
+      <div class="gallery-item g5 reveal" data-cat="abaya" onclick="openLightbox('💎','Embroidered Abaya')"><div class="g-bg">💎</div><div class="g-overlay"><span>❤️</span><span>🔍</span></div></div>
+      <div class="gallery-item g6 reveal" data-cat="hijab" onclick="openLightbox('✨','Niqab Collection')"><div class="g-bg">✨</div><div class="g-overlay"><span>❤️</span><span>🔍</span></div></div>
+      <div class="gallery-item g7 reveal" data-cat="jubba" onclick="openLightbox('🌟','Embroidered Jubba')"><div class="g-bg">🌟</div><div class="g-overlay"><span>❤️</span><span>🔍</span></div></div>
+      <div class="gallery-item g8 reveal" data-cat="gift" onclick="openLightbox('🛍️','Abaya Gift Set')"><div class="g-bg">🛍️</div><div class="g-overlay"><span>❤️</span><span>🔍</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="section-container">
+    <div class="section-label reveal">Why Us</div>
+    <h2 class="section-title reveal">Why Choose <span>Hijab ul Emaan?</span></h2>
+    <p class="section-sub reveal">We deliver quality, trust, and elegance with every purchase.</p>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-icon">🏆</div><div class="why-title">Premium Quality</div><div class="why-desc">Only the finest fabrics and materials sourced for every product we offer.</div></div>
+      <div class="why-card reveal"><div class="why-icon">🎁</div><div class="why-title">Gift Packaging</div><div class="why-desc">Beautiful Islamic gift wrapping available for all products — perfect for special occasions.</div></div>
+      <div class="why-card reveal"><div class="why-icon">📍</div><div class="why-title">Located in Mirpur</div><div class="why-desc">Easy to find at Kalyal Hotel, Sector C-1 — a trusted landmark in New Mirpur City.</div></div>
+      <div class="why-card reveal"><div class="why-icon">⭐</div><div class="why-title">910+ Happy Customers</div><div class="why-desc">4.8 Google rating from over 910 reviews — trust built on genuine customer satisfaction.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-container">
+    <div class="section-label reveal">Testimonials</div>
+    <h2 class="section-title reveal">What Our <span>Customers Say</span></h2>
+    <div class="rating-summary reveal">
+      <div class="rating-big">
+        <div class="num">4.8</div>
+        <div class="stars">★★★★★</div>
+        <div class="count">Based on 910 Google Reviews</div>
+      </div>
+      <div class="rating-bars">
+        <div class="bar-row"><span>5★</span><div class="bar-track"><div class="bar-fill" style="width:0%" data-width="85%"></div></div><span>85%</span></div>
+        <div class="bar-row"><span>4★</span><div class="bar-track"><div class="bar-fill" style="width:0%" data-width="10%"></div></div><span>10%</span></div>
+        <div class="bar-row"><span>3★</span><div class="bar-track"><div class="bar-fill" style="width:0%" data-width="3%"></div></div><span>3%</span></div>
+        <div class="bar-row"><span>2★</span><div class="bar-track"><div class="bar-fill" style="width:0%" data-width="1%"></div></div><span>1%</span></div>
+        <div class="bar-row"><span>1★</span><div class="bar-track"><div class="bar-fill" style="width:0%" data-width="1%"></div></div><span>1%</span></div>
+      </div>
+    </div>
+    <div class="carousel-wrapper reveal">
+      <div class="carousel" id="carousel">
+        <div class="review-card"><div class="rv-header"><div class="rv-name">Fatima A.</div><div class="rv-date">Nov 2024</div></div><div class="rv-stars">★★★★★</div><div class="rv-text">"Absolutely beautiful abayas! The quality is exceptional and the staff is so helpful. Best Islamic boutique in Mirpur."</div></div>
+        <div class="review-card"><div class="rv-header"><div class="rv-name">Zainab K.</div><div class="rv-date">Oct 2024</div></div><div class="rv-stars">★★★★★</div><div class="rv-text">"Bought a jubba for my husband as a gift — the packaging was stunning! Will definitely return for more."</div></div>
+        <div class="review-card"><div class="rv-header"><div class="rv-name">Muhammad R.</div><div class="rv-date">Sep 2024</div></div><div class="rv-stars">★★★★★</div><div class="rv-text">"The embroidered jubba I got is of the highest quality. Worth every penny. Highly recommend to everyone!"</div></div>
+        <div class="review-card"><div class="rv-header"><div class="rv-name">Ayesha N.</div><div class="rv-date">Aug 2024</div></div><div class="rv-stars">★★★★★</div><div class="rv-text">"سب سے اچھی بوتیک — عبائیں بہت خوبصورت اور معیاری ہیں۔ حجاب الایمان زندہ باد!"</div></div>
+        <div class="review-card"><div class="rv-header"><div class="rv-name">Hassan M.</div><div class="rv-date">Jul 2024</div></div><div class="rv-stars">★★★★☆</div><div class="rv-text">"Very good collection and reasonable prices. The linen jubba is perfect for summer. Great customer service too."</div></div>
+        <div class="review-card"><div class="rv-header"><div class="rv-name">Mariam S.</div><div class="rv-date">Jun 2024</div></div><div class="rv-stars">★★★★★</div><div class="rv-text">"I gifted an abaya set for Eid — my friend loved it! The gift wrapping was beautiful and the quality is superb."</div></div>
+      </div>
+    </div>
+    <div class="carousel-controls reveal">
+      <button class="car-btn" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
+      <button class="car-btn" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="review-actions reveal">
+      <a href="https://search.google.com/local/writereview?placeid=ChIJHijabulEmaan" target="_blank" class="btn-gold"><i class="fab fa-google"></i> Write a Google Review</a>
+      <a href="https://www.facebook.com/HijabulEmaanMirpur" target="_blank" class="btn-fb" style="padding:14px 32px;border-radius:50px;font-size:0.9rem;"><i class="fab fa-facebook-f"></i> Review on Facebook</a>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="order">
+  <div class="section-container">
+    <div class="section-label reveal">Place an Order</div>
+    <h2 class="section-title reveal">Order / <span>Inquiry</span></h2>
+    <p class="section-sub reveal">Fill the form below or WhatsApp us directly — we respond fast!</p>
+    <div class="order-layout">
+      <div class="order-form-panel reveal-l">
+        <h3 style="font-family:'Cormorant Garamond',serif;color:var(--gold);margin-bottom:1.5rem;font-size:1.3rem;">Your Order Details</h3>
+        <div class="form-row">
+          <div class="form-group"><label>Full Name *</label><input type="text" id="orName" placeholder="Your name"><div class="field-error" id="err-orName">Name is required</div></div>
+          <div class="form-group"><label>Phone Number *</label><input type="text" id="orPhone" placeholder="03XXXXXXXXX"><div class="field-error" id="err-orPhone">Phone is required</div></div>
+        </div>
+        <div class="form-group">
+          <label>Product Type *</label>
+          <select id="orProduct">
+            <option value="">-- Select Product --</option>
+            <option>Abaya (Plain)</option>
+            <option>Abaya (Embroidered)</option>
+            <option>Luxury Abaya</option>
+            <option>Hijab</option>
+            <option>Niqab</option>
+            <option>Prayer Dress / Jalabiya</option>
+            <option>Abaya Gift Set</option>
+            <option>Men's Jubba (Short)</option>
+            <option>Men's Jubba (Long)</option>
+            <option>Embroidered Jubba</option>
+            <option>Linen Jubba</option>
+            <option>Kurta Set</option>
+            <option>Jubba Gift Set</option>
+            <option>Islamic Cap (Topi)</option>
+            <option>Other</option>
+          </select>
+          <div class="field-error" id="err-orProduct">Please select a product</div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Size / Measurements</label><input type="text" id="orSize" placeholder="e.g. M, L, XL or 58cm"></div>
+          <div class="form-group"><label>Color Preference</label><input type="text" id="orColor" placeholder="e.g. Black, Navy, White"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Quantity</label><input type="number" id="orQty" placeholder="1" min="1" value="1"></div>
+          <div class="form-group"><label>Gift Wrapping?</label><select id="orGift"><option value="no">No thanks</option><option value="yes">Yes please!</option></select></div>
+        </div>
+        <div class="form-group"><label>Special Instructions</label><textarea id="orNotes" rows="3" placeholder="Any specific requirements, delivery notes, etc..." style="resize:vertical;"></textarea></div>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+          <button class="btn-gold" onclick="submitOrder()" style="flex:1;justify-content:center;"><i class="fas fa-paper-plane"></i> Place Order</button>
+          <button class="btn-wa" onclick="waOrder()" style="flex:1;justify-content:center;padding:13px 20px;border-radius:50px;border:none;cursor:pointer;font-size:0.9rem;font-weight:600;"><i class="fab fa-whatsapp"></i> Order via WhatsApp</button>
+        </div>
+      </div>
+      <div class="order-info reveal-r">
+        <div class="oi-card">
+          <div class="oi-title">🎁 Gift Orders Welcome</div>
+          <div class="oi-desc">Ordering as a gift? Select gift wrapping in the form and we'll package it beautifully with a personalized message.</div>
+        </div>
+        <div class="oi-card">
+          <div class="oi-title">📞 Quick Response</div>
+          <div class="oi-desc">We respond to all orders within 1-2 hours on WhatsApp. Call us directly for urgent inquiries: 0316 5980659</div>
+        </div>
+        <div class="oi-card">
+          <div class="oi-title">🕙 Visit Us In-Store</div>
+          <div class="oi-desc">Open daily until 10 PM at Kalyal Hotel, Sector C-1, New Mirpur City. Browse our full collection in person!</div>
+        </div>
+        <div class="oi-card">
+          <div class="oi-title">☪️ Islamic Values</div>
+          <div class="oi-desc">All products are carefully selected to meet Islamic standards of modesty, quality, and craftsmanship.</div>
+        </div>
+        <a href="https://wa.me/923165980659" target="_blank" class="btn-wa" style="width:100%;justify-content:center;padding:14px;border-radius:12px;font-size:0.95rem;">
+          <i class="fab fa-whatsapp"></i> Chat on WhatsApp Directly
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIFT SHOP -->
+<section id="gift">
+  <div class="section-container">
+    <div class="section-label reveal">Special Services</div>
+    <h2 class="section-title reveal">Gift <span>Shop</span></h2>
+    <p class="section-sub reveal">Make your loved ones feel special with our beautifully packaged Islamic gift sets.</p>
+    <div class="gift-grid">
+      <div class="gift-card reveal"><div class="gift-icon">🎁</div><div class="gift-title">Gift Wrapping</div><div class="gift-desc">All items available in beautiful Islamic gift wrapping — perfect for Eid, weddings, and birthdays.</div></div>
+      <div class="gift-card reveal"><div class="gift-icon">💌</div><div class="gift-title">Custom Gift Messages</div><div class="gift-desc">Add a personal message to your gift. We write it with care in Urdu or English.</div></div>
+      <div class="gift-card reveal"><div class="gift-icon">📦</div><div class="gift-title">Premium Packaging</div><div class="gift-desc">Elegant boxes and bags that make the gifting experience as special as the gift itself.</div></div>
+      <div class="gift-card reveal"><div class="gift-icon">🚶</div><div class="gift-title">In-Store Pickup</div><div class="gift-desc">Order ahead and pick up at Kalyal Hotel. We'll have it ready and beautifully wrapped!</div></div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+      <a href="https://wa.me/923165980659?text=Assalamu%20Alaikum!%20I%20want%20to%20order%20a%20gift%20set%20from%20Hijab%20ul%20Emaan." target="_blank" class="btn-gold" style="font-size:1rem;padding:16px 40px;">
+        <i class="fab fa-whatsapp"></i> Order a Gift Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-container">
+    <div class="section-label reveal">Get In Touch</div>
+    <h2 class="section-title reveal">Contact <span>Us</span></h2>
+    <p class="section-sub reveal">We're here to help — visit us, call us, or WhatsApp anytime.</p>
+    <div class="contact-layout">
+      <div class="contact-cards">
+        <div class="contact-card reveal">
+          <div class="contact-label">Phone & WhatsApp</div>
+          <div class="contact-val">0316 5980659</div>
+          <div class="contact-btns">
+            <a href="tel:03165980659" class="btn-call"><i class="fas fa-phone"></i> Call</a>
+            <a href="https://wa.me/923165980659" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          </div>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-label">Our Address</div>
+          <div class="contact-val" style="font-size:1rem;">Kalyal Hotel, Sector C-1, Chowk Shaheedan, Muhammad Road, New Mirpur City, 10250</div>
+          <div class="contact-btns" style="margin-top:0.8rem;">
+            <a href="https://www.google.com/maps/search/Hijab+ul+Emaan+Mirpur+Kalyal+Hotel" target="_blank" class="btn-maps"><i class="fas fa-map-marker-alt"></i> View on Maps</a>
+          </div>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-label">Hours & Social</div>
+          <div style="font-size:0.85rem;color:var(--text2);margin-bottom:0.8rem;line-height:1.9;">🕙 Open Daily — Closes 10 PM<br>⏱️ Avg visit: 10–45 minutes</div>
+          <div class="contact-btns">
+            <a href="https://www.facebook.com/HijabulEmaanMirpur" target="_blank" class="btn-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-panel reveal-r">
+        <h3>Send a Message</h3>
+        <div class="form-group"><label>Your Name</label><input type="text" id="cfName" placeholder="Full name"></div>
+        <div class="form-group"><label>Phone</label><input type="text" id="cfPhone" placeholder="03XXXXXXXXX"></div>
+        <div class="form-group"><label>Inquiry About</label><select id="cfSubject"><option value="">-- Select --</option><option>Women's Collection</option><option>Men's Collection</option><option>Gift Sets</option><option>Pricing</option><option>Store Hours</option><option>Other</option></select></div>
+        <div class="form-group"><label>Message</label><textarea id="cfMsg" rows="4" placeholder="Write your message here..." style="resize:vertical;"></textarea></div>
+        <button class="btn-primary" onclick="submitContact()" style="width:100%;justify-content:center;"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">☪️ Hijab ul Emaan</div>
+      <div class="footer-tagline">
+        The Premier Destination for High-Quality Abayas & Men's Jubbas — Mirpur
+        <div class="urdu">اعلیٰ معیار کی عبائیں اور مردانہ جبے</div>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/HijabulEmaanMirpur" target="_blank" class="soc-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/923165980659" target="_blank" class="soc-icon"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.google.com/maps/search/Hijab+ul+Emaan+Mirpur" target="_blank" class="soc-icon"><i class="fab fa-google"></i></a>
+        <a href="tel:03165980659" class="soc-icon"><i class="fas fa-phone"></i></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#collections">Collections</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+    </div>
+    <div class="footer-links">
+      <h4>Services</h4>
+      <a href="#order">Place Order</a>
+      <a href="#gift">Gift Shop</a>
+      <a href="#contact">Contact Us</a>
+      <a href="https://wa.me/923165980659" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Hijab ul Emaan — Mirpur. All Rights Reserved.</p>
+    <p>📞 <a href="tel:03165980659" style="color:var(--gold);text-decoration:none;">0316 5980659</a></p>
+  </div>
+</footer>
+
+<script>
+// THEME
+const html=document.documentElement;
+const themeBtn=document.getElementById('themeToggle');
+let isDark=localStorage.getItem('hue-theme')!=='light';
+function applyTheme(){html.setAttribute('data-theme',isDark?'dark':'light');themeBtn.innerHTML=isDark?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>';localStorage.setItem('hue-theme',isDark?'dark':'light');}
+applyTheme();
+themeBtn.addEventListener('click',()=>{isDark=!isDark;applyTheme();});
+
+// MOBILE MENU
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobileMenu');
+hamburger.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
+function closeMenu(){mobileMenu.classList.remove('open');}
+
+// NAVBAR
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
+  document.getElementById('backTop').classList.toggle('visible',window.scrollY>300);
+});
+
+// PARTICLES
+(function(){
+  const c=document.getElementById('particles');
+  for(let i=0;i<30;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    p.style.cssText=`left:${Math.random()*100}%;--dur:${4+Math.random()*6}s;--delay:${Math.random()*5}s;`;
+    c.appendChild(p);
+  }
+})();
+
+// REVEAL
+const revObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      // bar fills
+      e.target.querySelectorAll('.bar-fill[data-width]').forEach(b=>{b.style.width=b.dataset.width;});
+      // counters
+      e.target.querySelectorAll('.stat-num[data-target]').forEach(el=>countUp(el));
+    }
+  });
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>{
+  revObs.observe(el);
+  const sibs=el.parentElement.querySelectorAll('.reveal,.reveal-l,.reveal-r');
+  sibs.forEach((s,i)=>s.style.transitionDelay=(i*0.07)+'s');
+});
+
+// COUNTERS
+function countUp(el){
+  const target=parseFloat(el.dataset.target);
+  const isDecimal=el.dataset.decimal==='true';
+  const dur=1500,start=performance.now();
+  function step(now){
+    const p=Math.min((now-start)/dur,1);
+    const val=target*p;
+    el.textContent=isDecimal?val.toFixed(1):Math.floor(val)+(target>=100?'+':'');
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=isDecimal?target.toFixed(1):target+(target>=100?'+':'');
+  }
+  requestAnimationFrame(step);
+}
+
+// TABS
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// GALLERY FILTER
+function filterGallery(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.gallery-item').forEach(item=>{
+    item.style.display=(cat==='all'||item.dataset.cat===cat)?'':'none';
+  });
+}
+
+// LIGHTBOX
+function openLightbox(icon,name){
+  document.getElementById('lbContent').innerHTML=`<button class="lb-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button><div style="text-align:center;padding:2rem;"><div style="font-size:6rem;margin-bottom:1rem;">${icon}</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold);">${name}</div><p style="font-size:0.85rem;color:var(--text3);margin-top:0.5rem;">Hijab ul Emaan — Premium Quality</p></div>`;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+
+// CAROUSEL
+let carPos=0;
+function moveCarousel(dir){
+  const c=document.getElementById('carousel');
+  const cards=c.querySelectorAll('.review-card');
+  const maxPos=cards.length-1;
+  const cardW=cards[0].offsetWidth+16;
+  carPos=Math.max(0,Math.min(carPos+dir,maxPos-2));
+  c.style.transform=`translateX(-${carPos*cardW}px)`;
+}
+// Auto-scroll
+setInterval(()=>{ const c=document.getElementById('carousel'); const cards=c.querySelectorAll('.review-card'); if(carPos>=cards.length-3)carPos=0; else carPos++; c.style.transform=`translateX(-${carPos*(cards[0].offsetWidth+16)}px)`;},4000);
+
+// ORDER FORM
+function validateOrder(){
+  let ok=true;
+  ['orName','orPhone','orProduct'].forEach(id=>{
+    const el=document.getElementById(id);
+    const err=document.getElementById('err-'+id);
+    if(!el.value.trim()){el.style.borderColor='#e05555';err.style.display='block';ok=false;}
+    else{el.style.borderColor='';err.style.display='none';}
+  });
+  return ok;
+}
+function getOrderData(){
+  return{name:document.getElementById('orName').value,phone:document.getElementById('orPhone').value,product:document.getElementById('orProduct').value,size:document.getElementById('orSize').value,color:document.getElementById('orColor').value,qty:document.getElementById('orQty').value,gift:document.getElementById('orGift').value,notes:document.getElementById('orNotes').value};
+}
+function submitOrder(){
+  if(!validateOrder())return;
+  const d=getOrderData();
+  const saved=JSON.parse(localStorage.getItem('hue_orders')||'[]');
+  saved.push({...d,date:new Date().toLocaleString()});
+  localStorage.setItem('hue_orders',JSON.stringify(saved));
+  const waMsg=`Assalamu Alaikum! I'd like to place an order:\n\nName: ${d.name}\nPhone: ${d.phone}\nProduct: ${d.product}\nSize: ${d.size||'N/A'}\nColor: ${d.color||'N/A'}\nQty: ${d.qty}\nGift Wrap: ${d.gift}\nNotes: ${d.notes||'None'}`;
+  document.getElementById('modalSummary').innerHTML=`<strong>Product:</strong> ${d.product}<br><strong>Name:</strong> ${d.name}<br><strong>Phone:</strong> ${d.phone}<br><strong>Size:</strong> ${d.size||'N/A'} | <strong>Color:</strong> ${d.color||'N/A'}<br><strong>Qty:</strong> ${d.qty} | <strong>Gift Wrap:</strong> ${d.gift}`;
+  document.getElementById('modalWA').href=`https://wa.me/923165980659?text=${encodeURIComponent(waMsg)}`;
+  document.getElementById('successModal').classList.add('open');
+}
+function waOrder(){
+  if(!validateOrder())return;
+  const d=getOrderData();
+  const waMsg=`Assalamu Alaikum! I'd like to place an order:\n\nName: ${d.name}\nPhone: ${d.phone}\nProduct: ${d.product}\nSize: ${d.size||'N/A'}\nColor: ${d.color||'N/A'}\nQty: ${d.qty}\nGift Wrap: ${d.gift}\nNotes: ${d.notes||'None'}`;
+  window.open(`https://wa.me/923165980659?text=${encodeURIComponent(waMsg)}`,'_blank');
+}
+function closeModal(){document.getElementById('successModal').classList.remove('open');}
+
+// CONTACT FORM
+function submitContact(){
+  const name=document.getElementById('cfName').value.trim();
+  const phone=document.getElementById('cfPhone').value.trim();
+  if(!name||!phone){showToast('⚠️ Please enter name and phone.');return;}
+  const data={name,phone,subject:document.getElementById('cfSubject').value,msg:document.getElementById('cfMsg').value,date:new Date().toLocaleString()};
+  const saved=JSON.parse(localStorage.getItem('hue_contacts')||'[]');saved.push(data);localStorage.setItem('hue_contacts',JSON.stringify(saved));
+  document.getElementById('cfName').value='';document.getElementById('cfPhone').value='';document.getElementById('cfSubject').value='';document.getElementById('cfMsg').value='';
+  showToast('✅ Message sent! We will contact you soon. جزاک اللہ خیرا!');
+}
+
+// TOAST
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500);}
+
+// BAR FILLS via scroll
+const barObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.querySelectorAll('.bar-fill[data-width]').forEach(b=>{b.style.width=b.dataset.width;});});
+},{threshold:0.2});
+document.querySelectorAll('.rating-summary').forEach(el=>barObs.observe(el));
+</script>
+</body>
+</html>
